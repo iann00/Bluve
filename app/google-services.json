@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "904354731439",
+    "firebase_url": "https://bluve-b9865.firebaseio.com",
+    "project_id": "bluve-b9865",
+    "storage_bucket": "bluve-b9865.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904354731439:android:b13c427b02b8c3c6",
+        "android_client_info": {
+          "package_name": "com.bluve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904354731439-de4alq1242n68tj5alknvnu8clois3lu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bluve",
+            "certificate_hash": "4a57e1fbc6944dc11fafedbc32aa81f15af0668a"
+          }
+        },
+        {
+          "client_id": "904354731439-lo83o3qra7u0fvdvef1lul875bhga6ne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgBSkuHv2ficExYtz5AQ9ecfG5ifLh0Kw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904354731439-lo83o3qra7u0fvdvef1lul875bhga6ne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

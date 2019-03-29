@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="tap_open">Abrir</string>
     <string name="tap_close">Fechar</string>
+    <string name="total_usage_label">CONSUMO TOTAL</string>
+    <string name="time_usage_label">TEMPO DE USO</string>
 </resources>

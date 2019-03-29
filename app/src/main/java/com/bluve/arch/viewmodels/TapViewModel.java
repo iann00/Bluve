@@ -13,7 +13,10 @@ public class TapViewModel extends ViewModel {
     private MutableLiveData<Boolean> close;
     private MutableLiveData<Tap> tap;
 
-    public TapViewModel(TapRepository repo) {
+    public TapViewModel() {
+    }
+
+    public void setRepository(TapRepository repo) {
         this.repo = repo;
     }
 
