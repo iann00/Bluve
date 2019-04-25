@@ -11,10 +11,11 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/cl_tap_off"
+        android:id="@+id/view_torneira_off"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:visibility="gone"
         android:orientation="vertical">
 
         <ImageView
@@ -69,131 +70,138 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_tap_on"
+    <FrameLayout
+        android:id="@+id/view_torneira_on"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.scwang.wave.MultiWaveHeader
-            android:id="@+id/wave_header"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="71dp"
-            android:scaleY="-1"
-            app:layout_constraintBottom_toTopOf="@+id/tv_usage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:mwhCloseColor="@color/colorPrimary"
-            app:mwhColorAlpha="0.45"
-            app:mwhGradientAngle="45"
-            app:mwhProgress="1"
-            app:mwhStartColor="@color/colorPrimaryDark"
-            app:mwhVelocity="1"
-            app:mwhWaveHeight="50dp"
-            app:mwhWaves="MultiWave" />
-
-        <TextView
-            android:id="@+id/tv_usage"
-            android:layout_width="match_parent"
-            android:layout_height="156dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="0%"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/darkBlue"
-            android:textSize="100sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
+        <me.itangqi.waveloadingview.WaveLoadingView
+            android:id="@+id/wv_wave_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/ic_access_time_white_24dp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_time_usage_label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_usage"
-            app:layout_constraintVertical_bias="1.0" />
+            app:wlv_borderColor="@color/colorAccent"
+            app:wlv_borderWidth="3dp"
+            android:layout_gravity="center"
+            app:wlv_progressValue="40"
+            app:wlv_round_rectangle="true"
+            app:wlv_shapeType="circle"
+            app:wlv_titleCenterColor="@android:color/white"
+            app:wlv_titleCenterSize="24sp"
+            app:wlv_titleCenterStrokeColor="@color/colorPrimary"
+            app:wlv_titleCenterStrokeWidth="3dp"
+            app:wlv_triangle_direction="north"
+            app:wlv_waveAmplitude="70"
+            app:wlv_waveColor="@color/colorPrimary" />
 
-        <TextView
-            android:id="@+id/tv_time_usage_label"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/time_usage_label"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/darkBlue"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="329dp" />
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_time_usage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="30dp"
-            android:text="1 : 34s"
-            android:textAlignment="center"
-            android:textColor="@color/purple"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_time_usage_label"
-            app:layout_constraintVertical_bias="0.117" />
+            <TextView
+                android:id="@+id/tv_consumo_porcentagem"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="0%"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/darkBlue"
+                android:textSize="100sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/total_usage_label"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/darkBlue"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="425dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_access_time_white_24dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_time_usage_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_consumo_porcentagem"
+                app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/tv_total_usage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="340L"
-            android:textAlignment="center"
-            android:textColor="@color/purple"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.488" />
+            <TextView
+                android:id="@+id/tv_time_usage_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/time_usage_label"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/darkBlue"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="329dp" />
 
-    </LinearLayout>
+            <Chronometer
+                android:id="@+id/ch_tempo_consumo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/darkBlue"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_consumo_atual_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time_usage_label"
+                app:layout_constraintVertical_bias="0.117" />
+
+            <TextView
+                android:id="@+id/tv_consumo_atual_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total_usage_label"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/darkBlue"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="425dp" />
+
+            <TextView
+                android:id="@+id/tv_consumo_atual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="340L"
+                android:textAlignment="center"
+                android:textColor="@color/darkBlue"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_consumo_atual_label"
+                app:layout_constraintVertical_bias="0.488" />
+        </LinearLayout>
+
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

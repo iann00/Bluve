@@ -3,6 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="tap_open">Abrir</string>
     <string name="tap_close">Fechar</string>
-    <string name="total_usage_label">CONSUMO TOTAL</string>
+    <string name="total_usage_label">CONSUMO ATUAL</string>
     <string name="time_usage_label">TEMPO DE USO</string>
+    <string name="progresso_mensagem">%1$d &#37;</string>
+    <string name="consumo_mensagem">%2$d%L</string>
 </resources>
